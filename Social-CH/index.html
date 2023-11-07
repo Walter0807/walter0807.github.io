@@ -1,1 +1,278 @@
-Hello world.
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Social Motion Prediction with Cognitive Hierarchies (NeurIPS 2023)</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Courier Prime' rel='stylesheet'>
+    <style> 
+        span {
+          font-family: Courier;
+        }
+        p {
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                <b>Social Motion Prediction with Cognitive Hierarchies</b>
+                <!-- <small> -->
+                            </h1>
+                    <h2 class="col-md-12 text-center">
+                        NeurIPS 2023
+                                </h2>
+                <!-- </small> -->
+            </h2>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12 text-center" style="font-size: 24px">
+                <ul class="list-inline" style="font-size: 20px; color: black">
+                    <li>
+                        <a href="https://wentao.live/", target="_blank", style="font-size: 20px; color: black">Wentao Zhu</a>*
+                    </li>
+                    <li>
+                        <a href="https://asonin.github.io/", target="_blank", style="font-size: 20px; color: black">Jason Qin</a>*
+                    </li>
+                    <li>
+                        <a href="https://thorin666.github.io/", target="_blank", style="font-size: 20px; color: black">Yuke Lou</a>
+                    </li>
+                    <li>
+                        <a href="https://alvinyh.github.io/", target="_blank", style="font-size: 20px; color: black">Hang Ye</a>
+                    </li>
+
+                    <li>
+                        <a href="https://shirleymaxx.github.io/", target="_blank", style="font-size: 20px; color: black">Xiaoxuan Ma</a>
+                    </li>
+
+                    <li>
+                        <a href="https://haici.cc/", target="_blank", style="font-size: 20px; color: black">Hai Ci</a>
+                    </li>
+
+                    <li>
+                        <a href="https://cfcs.pku.edu.cn/english/people/faculty/yizhouwang/index.htm", target="_blank", style="font-size: 20px; color: black">Yizhou Wang</a>
+                    </li>
+                </ul>
+                <br>
+                Peking University
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="nav nav-pills nav-justified" style="margin-top:10px;">
+                    <a href="" target="_blank", style="color: #4B527E;">
+                            <strong><font size="+2">[Paper]</font></strong>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="" target="_blank", style="color: #4B527E;">
+                            <strong><font size="+2">[Code]</font></strong>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="" target="_blank", style="color: #4B527E;">
+                            <strong><font size="+2">[Data]</font></strong>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="" target="_blank", style="color: #4B527E;">
+                            <strong><font size="+2">[Video]</font></strong>
+                    </a>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-8 col-md-offset-2 ">
+                <img src="assets/teaser.gif" width="100%" style="border-style: none">
+        </div>
+        </div>
+
+
+        <div class="row ">
+            <div class="col-md-8 col-md-offset-2 ">
+                <h3>
+                    <b>Abstract</b>
+                </h3>
+                <p class="text-justify">
+                    Humans exhibit a remarkable capacity for anticipating the actions of others and planning their own actions accordingly. In this study, we strive to replicate this ability by addressing the social motion prediction problem. We introduce a new benchmark, a novel formulation, and a cognition-inspired framework. We present <span><b>Wusi</b></span>, a 3D multi-person motion dataset under the context of team sports, which features intense and strategic human interactions and diverse pose distributions. By reformulating the problem from a multi-agent reinforcement learning perspective, we incorporate behavioral cloning and generative adversarial imitation learning to boost learning efficiency and generalization. Furthermore, we take into account the cognitive aspects of the human social action planning process and develop a cognitive hierarchy framework to predict strategic human social interactions. We conduct comprehensive experiments to validate the effectiveness of our proposed dataset and approach.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    <b>Dataset</b>
+                </h3>
+
+                <img src="assets/wusi_demo.jpg" width="100%" style="border-style: none">
+
+
+                <!-- <img src="assets/wusi_demo.jpg" width="100%" style="border-style: none"> -->
+                <p class="text-justify">
+                    We capture the no-dribble-3-on-2 basketball drills performed by a team of professional basketball athletes. In each drill, three offensive players possess the ball, while another two players are on defense. The offensive team aims to accomplish as many successful passes as possible within the given time, while the defensive team strives to get steals, deflections, and slow down the offense.
+                </p>
+                <p>In the following, we denote offensive players using cold colors 
+                (<i style="color: #8684ff;">purple</i>, 
+                <i style="color: #6db9c0;">cyan</i> and 
+                <i style="color: #6296f3;">blue</i>), 
+                and defensive players using warm colors 
+                (<i style="color: #ff8902;">orange</i> and 
+                <i style="color: #e1a95d;">brown</i>).
+                </p>
+
+                <table style="width: 100%; border-collapse: collapse;">
+                  <tr>
+                    <td style="text-align: center;">
+                        <video id="v0" width="100%" autoplay loop muted>
+                          <source src="assets/data_1.mp4" type="video/mp4" />
+                        </video>
+                    </td>
+                    <td style="text-align: center;">
+                        <video id="v0" width="100%" autoplay loop muted>
+                          <source src="assets/data_2.mp4" type="video/mp4" />
+                        </video>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;"><p>Successful Passes</p></td>
+                    <td style="text-align: center;"><p>Intense Defense</p></td>
+                  </tr>
+
+                                    <tr>
+                    <td style="text-align: center;">
+                        <video id="v0" width="100%" autoplay loop muted>
+                          <source src="assets/data_3.mp4" type="video/mp4" />
+                        </video>
+                    </td>
+                    <td style="text-align: center;">
+                        <video id="v0" width="100%" autoplay loop muted>
+                          <source src="assets/data_4.mp4" type="video/mp4" />
+                        </video>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;"><p>Successful Deceptions</p></td>
+                    <td style="text-align: center;"><p>Deception Spotted</p></td>
+                  </tr>
+
+                </table>
+                <br>
+                <p class="text-justify">
+                    Our dataset features better pose diversity, higher motion intensity and stronger strategic interactions compared to previous datasets as demonstrated in the example motion clips.
+                </p>
+        </div></div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    <b>Results</b>
+                </h3>
+                <h3>Comparison with Ground-Truth</h3>
+                <video id="pred_1" width="100%" autoplay loop muted>
+                          <source src="assets/pred_1.mp4" type="video/mp4" />
+                </video>
+                <video id="pred_2" width="100%" autoplay loop muted>
+                    <source src="assets/pred_2.mp4" type="video/mp4" />
+                </video>
+                <br>
+                  <h3>Cognitive Hierarchies</h3>
+                <video id="ch_1" width="100%" autoplay loop muted>
+                          <source src="assets/ch_1.mp4" type="video/mp4" />
+                </video>
+
+                    <ul>
+                      <li><p>[Level-1] Player <i style="color: #8684ff;">Purple</i> passes to Player <i style="color: #6296f3;">Blue</i>.</p></li>
+                      <li><p>[Level-2] Accordingly, Player <i style="color: #e1a95d;">Brown</i> generates the stealing action and causes a defense gap between Player <i style="color: #6296f3;">Blue</i> and Player <i style="color: #6db9c0;">Cyan</i>.</p></li>
+                      <li><p>[Level-3] Therefore, Player <i style="color: #ff8902;">Orange</i> turns around and steps into the middle of player <i style="color: #6296f3;">Blue</i> and Player <i style="color: #6db9c0;">Cyan</i> to fill the gap, which is closer to expert demonstration.</p></li>
+                    </ul>
+        
+
+                <video id="ch_2" width="100%" autoplay loop muted>
+                    <source src="assets/ch_2.mp4" type="video/mp4" />
+                </video>
+
+                <ul>
+                    <li><p>[Level-1] Player <i style="color:#8684ff">Purple</i> makes a reception and a passing move.</p></li>
+                    <li><p>[Level-2] Thus, as a defender, Player <i style="color:#e1a95d">Brown</i> generates the action to turn to Player <i style="color:#8684ff">Purple</i>. His teammate, Player <i style="color:#ff8902">Orange</i>, is also getting close to Player <i style="color:#8684ff">Purple</i> to defend.</p></li>
+                    <li><p>[Level-3] In light of this, Player <i style="color:#ff8902">Orange</i> chooses a different action, turning to Player <i style="color:#6db9c0">Cyan</i>. The level 3 actions are also closer to ground truth.</p></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+<!--         <br>
+        <br>  -->
+
+
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    <b>Citation</b>
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+</textarea>
+                </div>
+            </div>
+        </div> -->
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h3>
+            <b>Citation</b>
+        </h3>
+        <div class="form-group col-md-10 col-md-offset-1">
+            <div style="font-size: 18px;">
+                <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{zhu2023social,
+    title={Social Motion Prediction with Cognitive Hierarchies},
+    author={Zhu, Wentao and Qin, Jason and Lou, Yuke and Ye, Hang and Ma, Xiaoxuan and Ci, Hai and Wang, Yizhou},
+    booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+    year={2023}
+}</textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p style="text-align:center;font-size:small;">
+                    Template courtesy of <a href="https://jonbarron.info/", target="_blank">Jon Barron</a>.
+                  </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
