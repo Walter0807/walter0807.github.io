@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1709104061 "index.html" "index.pdf" "index" 1709104061
+  "/usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf" 1463093894 31953 b9489e6e586f798610c60aec1f5ec548 ""
+  "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495951598 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
+  "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1495951650 3873397 40571d1a89442fa009131cf2815f70cf ""
+  "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
+  "index.aux" 1709104061 8 a94a2480d3289e625eea47cd1b285758 ""
+  "index.html" 1709104060 8767 88ba47a91312620999c16be75085b150 ""
+  (generated)
+  "index.pdf"
+  "index.log"

@@ -1,0 +1,8 @@
+PWD /Users/Walter/2/walter0807.github.io/LM-Belief
+INPUT /usr/local/texlive/2016/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT index.html
+OUTPUT index.log
+OUTPUT index.pdf
+INPUT /usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map

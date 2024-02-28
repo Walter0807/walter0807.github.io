@@ -33,6 +33,17 @@
         .nav-pills a:hover {
             text-decoration: none;
         }
+      .card {
+    margin: 30px auto; /* 上下各30px的外边距，左右自动调整使其居中 */
+    display: block; /* 确保div作为块级元素处理 */
+    text-align: center; /* 使内部的内容（如图片）居中显示 */
+  }
+  .card img {
+    width: 50%; /* 图片宽度为原始大小的50% */
+    border-radius: 10px; /* 图片的圆角边缘 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 图片的阴影效果 */
+    display: inline-block; /* 图片作为内联块级元素显示，以便它们可以被文本对齐属性影响 */
+  }
     </style>
 </head>
 
@@ -41,10 +52,10 @@
 <body>
     <div class="container" id="main">
         <div class="row">
-            <h1 class="col-md-12 text-center">
+            <h2 class="col-md-12 text-center">
                 <b>Language Models Represent Beliefs of Self and Others</b>
                 <!-- <small> -->
-                            </h1>
+                            </h2>
            <!--          <h2 class="col-md-12 text-center">
                         NeurIPS 2023
                                 </h2> -->
@@ -66,12 +77,14 @@
                     </li>
                 </ul>
                 <br>
-                Peking University
+                <p style="font-size: 22px">
+                    Peking University
+                </p>
             </div>
         </div>
 
         <br>
-        <div class="row">
+<!--         <div class="row">
             <div class="col-md-12 text-center">
                 <ul class="nav nav-pills nav-justified" style="margin-top:10px;">
                     <a href="https://arxiv.org/pdf/2311.04726.pdf" target="_blank" ,="" style="color: #FC6736;">
@@ -84,54 +97,113 @@
                     
                 </ul>
             </div>
-        </div>
-
-<!--         <div class="row ">
-            <div class="col-md-8 col-md-offset-2 ">
-                <img src="./assets/teaser.gif" width="100%" style="border-style: none">
-        </div>
         </div> -->
 
+<!-- <p align="center">
+<a href="https://arxiv.org/", target="_blank">
+<img src="https://img.shields.io/static/v1?style=for-the-badge&message=arXiv&color=B31B1B&logo=arXiv&logoColor=FFFFFF&label="></a>
+<a href="https://walter0807.github.io/LM-Belief/", target="_blank">
+<img src="https://img.shields.io/badge/_-Code-black?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+</p> -->
+    
+<p align="center">
+<a href="https://arxiv.org/", target="_blank">
+<img src="assets/buttons_paper.png"alt="arXiv" style="width: 140px;"></a>
+<a href="https://walter0807.github.io/LM-Belief/", target="_blank">
+<img src="assets/buttons_code.png" alt="GitHub" style="width: 140px;"></a>
+</p>
+
+<div class="col-md-8 col-md-offset-2 ">
+    <div class="card">
+    <p align="center">
+      <img src="assets/teaser.jpg" style="width: 50%;">
+    </p>
+    </div>
+
+    <p style="text-align:center;font-size:18px;">
+      <b>TL;DR:</b> LLMs internally represent beliefs of themselves and other agents, and manipulating these representations can significantly impact their Theory of Mind reasoning performances.
+    </p>
+</div>
 
         <div class="row ">
             <div class="col-md-8 col-md-offset-2 ">
-                <h2>
+                <h3>
                     <b>Abstract</b>
-                </h2>
+                </h3>
                 <p class="text-justify">
-                    Humans exhibit a remarkable capacity for anticipating the actions of others and planning their own actions accordingly. In this study, we strive to replicate this ability by addressing the social motion prediction problem. We introduce a new benchmark, a novel formulation, and a cognition-inspired framework. We present <span><b>Wusi</b></span>, a 3D multi-person motion dataset under the context of team sports, which features intense and strategic human interactions and diverse pose distributions. By reformulating the problem from a multi-agent reinforcement learning perspective, we incorporate behavioral cloning and generative adversarial imitation learning to boost learning efficiency and generalization. Furthermore, we take into account the cognitive aspects of the human social action planning process and develop a cognitive hierarchy framework to predict strategic human social interactions. We conduct comprehensive experiments to validate the effectiveness of our proposed dataset and approach.
+                    Understanding and attributing mental states, known as Theory of Mind (ToM), emerges as a fundamental capability for human social reasoning. While Large Language Models (LLMs) demonstrate certain ToM abilities, the mechanisms underlying these capabilities remain elusive. In this study, we discover that it is possible to linearly decode the belief status from the perspectives of various agents through neural activations of language models, indicating the existence of internal representations of self and others' beliefs. By manipulating these representations, we observe dramatic changes in the models' ToM performance, underscoring their pivotal role in the social reasoning process. Additionally, our findings extend to diverse social reasoning tasks that involve different causal inference patterns, suggesting the potential generalizability of these representations.
                 </p>
             </div>
         </div>
 
+<div class="row ">
+            <div class="col-md-8 col-md-offset-2 ">
+                <h3>
+                    <b>Discovering the Belief Representations</b>
+                </h3>
+
+                <p align="center">
+                  <img src="assets/probe_prompt.jpg" style="width: 100%;">
+                </p>
+                <p>
+We prompt the model with pairs of story and belief, and use the attention head activations to decode the belief status of different agents. We focus on two agents, namely protagonist, the central figure of the narrative, and oracle, which represents an omniscient spectator's perspective.
+                </p>
+
+
+                <p align="center">
+                  <img src="assets/probe_heads.jpg" style="width: 100%;">
+                </p>
+<p>
+We find that even with models as simple as linear regression, it is possible to decode the belief status of both agents, either separately or jointly, from a specific group of attention heads. Notably, there exist more activation heads that could represent the oracle belief than those representing the protagonist's belief."
+</p>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2 ">
+                <h3>
+                    <b>Belief Manipulation</b>
+                </h3>
+
+                <p align="center">
+                  <img src="assets/logit_half.jpg" style="width: 100%;">
+                </p>
+<p>
+We discover that steering head activations towards the belief directions identified through multinomial probing significantly affects the model's ToM capability, whereas manipulation in random directions results in negligible change.
+</p>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2 ">
+                <h3>
+                    <b>Deciphering the Belief Directions</b>
+                </h3>
+
+                <p align="center">
+                  <img src="assets/token_map_v3.jpg" style="width: 100%;">
+                </p>
+<p>
+Furthermore, we seek to understand which input tokens are most relevant to the identified belief directions. We project the neural activations onto the belief directions and back-propagate to the input token embedding space. Remarkably, this process precisely localizes the key causal variables within the prompt, including the protagonist's desires and initial actions, the causal event that changes the environmental states, and the protagonist’s percept status of the causal event. These elements collectively enable a comprehensive inference of both agents' beliefs. These observations may also account for the generalizability of the belief directions across different social reasoning tasks.
+</p>
+            </div>
+</div>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <h2>
+    <div class="col-md-10 col-md-offset-2">
+        <h3>
             <b>Citation</b>
-        </h2>
-        <div class="form-group col-md-10 col-md-offset-1">
-            <div style="font-size: 18px;">
-<!--                 <textarea id="bibtex" class="form-control" readonly="" style="display: none;">@inproceedings{zhu2023social,
-    title={Social Motion Prediction with Cognitive Hierarchies},
-    author={Zhu, Wentao and Qin, Jason and Lou, Yuke and Ye, Hang and Ma, Xiaoxuan and Ci, Hai and Wang, Yizhou},
-    booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
-    year={2023}
-}</textarea> -->
+        </h3>
+        <div class="form-group col-md-10 col-md-offset-0">
+            <div style="font-size: 22px;">
+                <textarea id="bibtex" class="form-control" readonly="" style="display: none;">
+@article{zhu2024language,
+  title={Language Models Represent Beliefs of Self and Others},
+  author={Zhu, Wentao and Zhang, Zhining and Wang, Yizhou},
+  year={2024}
+}
+</textarea>
+</div>
 
-
-    </div>
 </div>
 </div>
 </div>
-<br><br><br><br><br><br><br><br>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <p style="text-align:center;font-size:small;">
-                    Template courtesy of <a href="https://jonbarron.info/" ,="" target="_blank">Jon Barron</a>.
-                  </p>
-            </div>
-        </div>
     </div>
 
 
